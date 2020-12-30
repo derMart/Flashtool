@@ -11,4 +11,4 @@ image-%: Dockerfile Makefile
 	touch $@;
 
 flashtool-%-linux.tar.gz: image-%
-	docker run --rm -it $(addsuffix -$*, ${tag}) /bin/sh -c 'cat /Flashtool/Deploy/flashtool-*-linux.tar.gz' > $@
+	docker run --rm $(addsuffix -$*, ${tag}) /bin/sh -c 'cat /Flashtool/Deploy/flashtool-*-linux.tar.gz' > $@
